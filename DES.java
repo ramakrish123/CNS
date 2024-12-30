@@ -3,6 +3,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
+import java.util.*;
 
 public class DES {
 
@@ -34,12 +35,13 @@ public class DES {
         try {
             // Generate a DES key
             SecretKey secretKey = generateKey();
+            Scanner sc=new Scanner(System.in);
 
-            // Example plaintext
-            String plaintext = "Hello, World!";
+            System.out.println("enter the plain trxt:");
+            String plaintext =sc.nextLine();
             System.out.println("Original Text: " + plaintext);
 
-            // Encrypt the plaintext
+           
             String encryptedText = encrypt(plaintext, secretKey);
             System.out.println("Encrypted Text: " + encryptedText);
 
