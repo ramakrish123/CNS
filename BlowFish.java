@@ -3,12 +3,15 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
+import java.util.Scanner;
 
 public class BlowFish {
     private static final String ALGORITHM = "Blowfish";
 
     public static void main(String[] args) throws Exception {
-        String plaintext = "Hello, Blowfish!";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter the plaintext:");
+        String plaintext = sc.nextLine();
         
         // Generate a secret key
         SecretKey secretKey = generateKey();
